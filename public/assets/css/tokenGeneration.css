@@ -1,0 +1,69 @@
+.container{
+    background:#fff;
+    margin: auto;
+    margin-top: 20px;
+}
+.content{
+    text-align: center;
+}
+.form{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+p{
+    color: #575757 ;
+}
+.register{
+    width: 40%;
+    text-align: justify;
+    margin: auto;
+
+}
+.token{
+    width:100%;
+    background: #575757;
+}
+.input{
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    width: 300px;
+}
+.button{
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    background: #575757;
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 30px;
+    width: 300px;
+}
+.copy{
+    text-align: right;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    
+}
+.tg{
+    color: #fff;
+    font-size: 100px;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+.alert {
+    background-color: #f2f4f6; /* Fondo amarillo */
+    color: #333; /* Color del texto */
+    border: 1px solid #f2f4f6; /* Borde amarillo claro */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+

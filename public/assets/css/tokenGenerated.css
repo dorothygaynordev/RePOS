@@ -1,0 +1,60 @@
+.table-container {
+    height: 100%;
+}
+.custom-table{
+    width: 100%;
+}
+
+/* Estilos adicionales para la tabla según tu diseño */
+.custom-table th, .custom-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.custom-table {
+    margin: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: center;
+}
+
+.custom-table th {
+    background-color: #575757;
+    color: #FFF;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+.custom-table th:nth-child(1),
+.custom-table td:nth-child(1) {
+    width: 10%; /* Ajusta el ancho de la primera columna según sea necesario */
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #2d3748;
+    color: white;
+}

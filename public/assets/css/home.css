@@ -1,0 +1,136 @@
+.control{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+.select,.date,.file{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+.zone{
+    font-size: large;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 30px;
+}
+select,.fecha{
+    border: 0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    width: 150px;
+}
+label{
+    font-weight: bolder;
+    font-size: large;
+}
+.number{
+    width: 100px;
+    border:0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.btn{margin:10px}
+.buttonFilter{
+    border:2px solid #575757;
+    padding: 10px;
+    border-radius: 20px;
+    color: #575757;
+    width: 100px;
+    font-weight: bold;
+    
+}
+.buttonFilter:hover{
+    background: #575757;
+    color: #FFF;
+}
+.buttonExport{
+    border:2px solid #1A850E;
+    border-radius: 20px;
+    color: #575757;
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.buttonExport:hover{
+    background: #1A850E;
+    color: #FFF;
+}
+
+
+.table-container {
+    max-height: auto; /* Altura máxima para la barra de desplazamiento vertical */
+    overflow-y: auto; /* Activa la barra de desplazamiento vertical cuando sea necesario */
+    
+    max-width: auto; /* Ancho máximo para la barra de desplazamiento horizontal */
+    overflow-x: auto; /* Activa la barra de desplazamiento horizontal cuando sea necesario */
+    position: relative;
+}
+.tables{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos adicionales para la tabla según tu diseño */
+.custom-table th, .custom-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.custom-table {
+    margin: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: center;
+}
+
+.custom-table th {
+    background-color: #575757;
+    color: #FFF;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #2d3748;
+    color: white;
+}
+/* Cambiar el color de fondo del modal */
+.modal-content {
+    background-color: #f0f0f0;
+}
+
+/* Cambiar el color del texto en el modal */
+.modal-body {
+    color: #333;
+}
+
