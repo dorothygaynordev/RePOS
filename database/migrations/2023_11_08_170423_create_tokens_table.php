@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('generador');
             $table->string('tienda');
-            $table->string('fechaUso');
+            $table->datetime('fechaUso');
             $table->string('colaborador');
         });
     }

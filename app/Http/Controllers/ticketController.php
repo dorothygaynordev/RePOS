@@ -17,10 +17,11 @@ class ticketController extends Controller
 
         // Ruta completa del archivo en la carpeta compartida
         $ruta = $carpetaCompartida . "{$tienda}\\" . "Folio{$folio}.txt";
-
+        // dd($ruta);
         if (file_exists($ruta)) {
             $contenido = file_get_contents($ruta);
-
+            $contenido = mb_convert_encoding($contenido, 'UTF-8', "ISO-8859-1");
+            // dd($contenido);
             return View::make('showTicket', compact('contenido'));
         } else {
             return response()->view('archivo-no-encontrado');

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class puestoModel extends Model
 {
     use HasFactory;
-
+    protected $connection = 'mysql';
     protected $table = 'puestos_reporte';
 }

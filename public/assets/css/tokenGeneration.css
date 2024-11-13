@@ -44,10 +44,10 @@ p{
     width: 300px;
 }
 .copy{
-    text-align: right;
+    text-align: center;
     color: #fff;
     font-weight: bold;
-    padding: 5px;
+    background: #333;
     
 }
 .tg{
@@ -58,9 +58,9 @@ p{
 }
 
 .alert {
-    background-color: #f2f4f6; /* Fondo amarillo */
+    background-color: #16C018; /* Fondo amarillo */
     color: #333; /* Color del texto */
-    border: 1px solid #f2f4f6; /* Borde amarillo claro */
+    border: 1px solid #16C018; /* Borde amarillo claro */
     padding: 10px;
     text-align: center;
     border-radius: 5px;

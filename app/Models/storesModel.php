@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class reportModel extends Model
+class storesModel extends Model
 {
     use HasFactory;
-    protected $connection = 'mysql';
-    protected $table = 'reporte_pos';
-    
+    protected $connection = 'sqlsrv';
+    protected $table = 'vw_SalesMB';
 }

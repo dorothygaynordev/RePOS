@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class zonesModel extends Model
 {
     use HasFactory;
+    protected $connection = 'mysql';
     protected $table = 'zonas_reporte';
 }

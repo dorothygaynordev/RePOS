@@ -17,6 +17,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    protected $connection = 'mysql';
 
     /**
      * The attributes that are mass assignable.
@@ -27,6 +28,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'puesto',
+        'zona',
     ];
 
     /**

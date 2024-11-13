@@ -4,8 +4,12 @@ use App\Http\Controllers\puestosController;
 use App\Http\Controllers\TokenController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\reportController;
+use App\Http\Controllers\storesController;
 use App\Http\Controllers\ticketController;
 use App\Http\Controllers\tokensGeneratedController;
+use App\Http\Controllers\centerStockController;
+use App\Models\centerStockModel;
+use App\Models\storesModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +44,7 @@ Route::get('/export-to-excel', [reportController::class, 'exportToExcel'])->name
 Route::get('tokensGenerated',[TokenController::class, 'tokensGenerated'])->name('tokens');
 Route::get('ticket/{folio}/{tienda}', [ticketController::class, 'showTicket'])->name('ticket');
 Route::get('register',[puestosController::class, 'index'])->name('register');
- 
+Route::get('tienda',[storesController::class, 'index'])->name('tiendas');
+Route::get('inventario',[centerStockController::class, 'index'])->name('inventario');
+Route::match(['get', 'post'], '/tiendas', [storesController::class, 'index'])->name('tiendas');
+Route::get('/export-to-excelStore', [storesController::class, 'exportToExcelStores'])->name('exportToExcelStores');

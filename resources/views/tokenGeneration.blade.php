@@ -10,28 +10,32 @@
             <div class="form" >
                 <div class="register">
                     <p>Ingrese correctamente los campos</p>
+                    <p> <FONT  COLOR="red">*</FONT> Campos necesarios</p>
                     <form method="POST" action="{{ route('tokenG') }}">
                         @csrf
 
+                        <script>
+                            // Función para convertir a mayúsculas cuando se cambia el valor del campo "centro"
+                            function convertirAMayusculas(input) {
+                                input.value = input.value.toUpperCase();
+                            }
+                        </script>
+                        
                         <div class="mt-4">
-                            <label for="name"> Centro</label><br>
-                            <input type="text" class="input" id="centro" name="centro">
+                            <label for="centro">Centro <FONT  COLOR="red">*</FONT></label><br>
+                            <input type="text" class="input" id="centro" name="centro" placeholder="Ej. D123" maxlength="4" pattern="[A-Za-z][0-9]{3}" oninput="convertirAMayusculas(this)" required>
                         </div>
                         <div class="mt-4">
-                            <label for="date"> Fecha</label> <br>
-                            <input type="date" class="input" id='fecha' name="fecha">
+                            <label for="date"> Fecha <FONT  COLOR="red">*</FONT></label> <br>
+                            <input type="date" class="input" id='fecha' name="fecha" required>
                             <div class="mt-4">
-                                <label for="name"> N° de colaborador</label><br>
-                                <input type="text" class="input" id="numero_colaborador" name="colaborador">
-                            </div>
-                            <div>
-                                <label for="name"> Motivo de generación de Token</label> <br>
-                                <input type="text" class="input" id="motivo_generacion_token"
-                                    name="motivo_generacion_token">
+                                <label for="name"> N° de colaborador <FONT  COLOR="red">*</FONT></label><br>
+                                <input type="text" class="input" id="numero_colaborador" name="colaborador" placeholder="Ej. 12345" maxlength="5" pattern="\d{5}" required>
                             </div>
                             <div class="mt-4">
-                                <label for="centro">Puesto</label><br>
+                                <label for="centro">Puesto <FONT  COLOR="red">*</FONT></label><br>
                                 <select class="input" id="puesto" name="puesto" style="width: 300px">
+                                    <option  disabled selected>Seleccione un puesto</option>
                                     @if (!empty($puestos))
                                         @foreach ($puestos as $puesto)
                                         <?php
@@ -43,12 +47,20 @@
                                     @endif
                                 </select>
                             </div>
+                            <div style="padding-top:10px ">
+                                <label for="name"> Motivo de generación de Token</label> <br>
+                                <input type="text" class="input" id="motivo_generacion_token"
+                                    name="motivo_generacion_token">
+                            </div>
                             <input type="hidden" name="usuario" value="{{ auth()->user()->name }}">
 
                             <div class="button">
                                 <button class="btn" type="submit" name="name" required autofocus
                                     autocomplete="name">Generar Token <i class="fa fa-key" aria-hidden="true"></i></button>
                             </div>
+
+                                
+
 
 
                     </form>
@@ -60,11 +72,11 @@
 
                 <p>Token Generado:</p>
                 <div class="copy">
-                    <button id="copyButton" class="copy" style="font-size: x-large;">Copiar <i class="fa fa-clone"
+                    <button id="copyButton" class="copy" style="font-size: x-large;">Click aquí para copiar token <i class="fa fa-clone"
                             aria-hidden="true"></i></button>
                 </div>
                 @if (!empty($new_token))
-                    <div>
+                    <div style="padding-top: 30px">
                         <h1 class="tg" id="tokenValue">{{ $new_token }}</h1>
                     </div>
                 @endif

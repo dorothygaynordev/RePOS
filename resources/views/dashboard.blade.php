@@ -61,7 +61,7 @@
                             <button type="submit" class="buttonFilter" style="">
                                 Filtrar <i class="fa fa-filter" aria-hidden="true"></i>
                             </button>
-        </form>
+        </form> 
         </div>
         <a href="{{ route('exportToExcel' , ['zona' => request('zona'), 'report' => request('report'),'fechaInicio' => request('fechaInicio'), 'fechaFin' => request('fechaFin')])  }}" class="buttonExport">
             <div class="btn">
@@ -136,7 +136,7 @@
                                     @elseif($campo->forma_pago == 6)
                                         -
                                     @elseif($campo->forma_pago == 7)
-                                        A placo
+                                        A plazo
                                     @elseif($campo->forma_pago == 8)
                                         Mixto
                                     @elseif($campo->forma_pago == 9)
@@ -153,9 +153,9 @@
                                 <td>{{ $campo->autorizador }}</td>
                                 {{-- Medio autorizacion --}}
                                 <td>
-                                    @if ($campo->Medio_aut == 1)
+                                    @if ($campo->medio_aut == 1)
                                         Huella
-                                    @elseif($campo->Medio_aut == 2)
+                                    @elseif($campo->medio_aut == 2)
                                         Token
                                     @else
                                         Sin movimiento
@@ -213,12 +213,12 @@
         // Inicializa DataTable en la tabla con el ID "table"
         $('.custom-table').DataTable({
             language: {
-                url: "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish_Mexico.json"
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
             },
             searching: false,
             lengthChange: true, // Activa la opción para cambiar la cantidad de registros por página
             lengthMenu: [10, 25, 50, 100], // Define las opciones de cantidad de registros por página
-            pageLength: 10, // Establece la cantidad de registros por página predeterminada
+            pageLength: 100, // Establece la cantidad de registros por página predeterminada
             lengthChange: false,
             info: false,
             order: [

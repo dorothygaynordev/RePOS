@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class tokenModel extends Model
 {
     use HasFactory;
-
+    protected $connection = 'mysql';
     protected $table = 'tokens';
 }

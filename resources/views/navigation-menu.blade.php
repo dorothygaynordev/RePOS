@@ -5,9 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('register') }}">
-                        <x-application-mark class="block h-9 w-auto" />
-                    </a>
+                    <a href="{{ route('dashboard') }}">
+                        <img src="https://dorothygaynor.vtexassets.com/assets/vtex.file-manager-graphql/images/6845a0a7-4565-4154-9ecc-4c2c16434d78___4e4f9aec16b88809eba9c6c84f6a2645.png" alt="">                    </a>
                 </div>
 
                 <!-- Navigation Links -->
@@ -24,6 +23,9 @@
                             {{ __('Tokens Generados') }}
                         </x-nav-link>
                     @endif
+                    <x-nav-link href="{{ route('tiendas') }}" :active="request()->routeIs('tiendas')">
+                        {{ __('Tiendas') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -88,16 +90,16 @@
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <button
+                                {{-- <button
                                     class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                     <img class="h-8 w-8 rounded-full object-cover"
                                         src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                </button>
+                                </button> --}}
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
                                         class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
-                                        {{ Auth::user()->name }}
+                                        
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -174,23 +176,16 @@
                     </div>
                 @endif
 
-                <div>
+                {{-- <div>
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                </div>
+                </div> --}}
             </div>
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-responsive-nav-link>
-                @endif
+               
+               
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}" x-data>

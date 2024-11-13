@@ -1,16 +1,14 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+
 
         <x-validation-errors class="mb-4" />
-
+        
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
+                <x-label for="name" value="{{ __('Nombre') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
@@ -20,17 +18,42 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Contraseña') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
-
+            <div class="mt-4">
+                <x-label for="puesto" value="{{ __('Puesto') }}" />
+                <select id="puesto" name="puesto" class="block mt-1 w-full">
+                    <option value="" disabled selected>Selecciona un puesto</option>
+                    @if(!empty($puestos))
+                    @foreach ($puestos as $puesto)
+                        <option value="0{{ $puesto->clave_cargo }}">{{ $puesto->rol_descripcion }}</option>
+                    @endforeach
+                    @endif
+                </select>
+            </div>
+            
+            <div class="mt-4">
+                <x-label for="zona" value="{{ __('Zonas') }}" />
+                <select id="zona" name="zona" class="block mt-1 w-full">
+                    <option value="" disabled selected>Seleccione una zona</option>
+                    <option value="0"> Todas</option>
+                    @if(!empty($zonas))
+                    @foreach ($zonas as $zona)
+                        <option value="{{ $zona->id  }}">{{ $zona->descripcion }}</option>
+                    @endforeach
+                    @endif
+                </select>
+            </div>
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
+
+
                     <x-label for="terms">
                         <div class="flex items-center">
                             <x-checkbox name="terms" id="terms" required />
@@ -47,12 +70,9 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Registrar') }}
                 </x-button>
             </div>
         </form>

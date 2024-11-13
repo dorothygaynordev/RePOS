@@ -3,9 +3,9 @@
         <img src="https://dorothygaynor.vtexassets.com/assets/vtex.file-manager-graphql/images/6845a0a7-4565-4154-9ecc-4c2c16434d78___4e4f9aec16b88809eba9c6c84f6a2645.png" alt="" style="display: block; margin: auto;">
     </div>
     <x-authentication-card>
+        <h1 style="text-align: center; font-size: x-large; font-weight: bolder; margin-bottom:20px">Portal de reportes POS</h1>
 
         
-
         <x-validation-errors class="mb-4" />
 
         @if (session('status'))
